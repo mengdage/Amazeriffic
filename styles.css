@@ -1,0 +1,65 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f9e933;
+  padding: 0;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rationale', cursive;
+}
+
+header, main, footer {
+  min-width: 855px;
+  overflow: auto;
+  /*margin: 0;
+  padding: 0;*/
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #F00;
+}
+
+header .container, main .container, footer .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+header {
+  background: #FFFFFF;
+}
+
+main {
+  background: #FFFFFF;
+}
+
+.left {
+  float: left;
+  width: 570px;
+}
+
+.right {
+  float: right;
+  width: 285px;
+  overflow: hidden;
+}
+
+footer {
+  font-size: 0.8em;
+}
+footer p {
+  margin: 0;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+footer ul a{
+  text-decoration: none;
+}
