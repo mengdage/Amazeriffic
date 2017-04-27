@@ -1,10 +1,15 @@
 {
   "name": "Amazeriffic",
+  "version": "0.1.0",
   "description": "The best to-do list app in the history of the world!",
-  "version": "0.0.2",
+  "main": "server.js",
+  "scripts":{
+    "start": "node server.js"
+  },
   "dependencies":{
     "mongoose": "4.9.x",
     "express": "4.15.x",
     "body-parser": "1.17.x"
-  }
+  },
+  "license": "MIT"
 }
