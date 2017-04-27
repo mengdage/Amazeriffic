@@ -1,0 +1,123 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f9e933;
+  padding: 0;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rationale', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+header, main, footer {
+  min-width: 855px;
+  overflow: auto;
+  /*margin: 0;
+  padding: 0;*/
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #F00;
+}
+
+header .container, main .container, footer .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+header {
+  background: #FFFFFF;
+}
+
+main {
+  background: #FFFFFF;
+}
+
+.tabs a span {
+  display: inline-block;
+  border-radius: 5px 5px 0 0;
+  width:100px;
+  margin-right: 10px;
+  text-align: center;
+  background-color: #ddd;
+  padding: 5px;
+}
+
+.tabs a span.active{
+  background-color: #eee;
+}
+.content {
+  background-color: #eee;
+  padding: 10px;
+}
+.content p {
+  margin:10px 0 0 0;
+}
+.content input {
+  width: 50%;
+  height: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  /*margin-bottom: 10px;*/
+  border-radius: 5px;
+
+}
+.content button {
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 5px;
+  color: ivory;
+  background-color: #76befc;
+  font-size: 1.3em;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.content div.tagEntry:nth-child(even){
+  /*background-color: #ddd;*/
+}
+
+#imgDiv{
+  overflow: hidden;
+}
+.left-8 {
+  float: left;
+  width: 66.6%;
+}
+
+.right-4 {
+  float: right;
+  width: 33.3%;
+  /*overflow: hidden;*/
+}
+.left-6 {
+  float: left;
+  width: 50%;
+}
+
+.right-6 {
+  float: right;
+  width: 50%;
+  /*overflow: hidden;*/
+}
+
+footer {
+  font-size: 0.8em;
+}
+footer p {
+  margin: 0;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+footer ul a{
+  text-decoration: none;
+}
