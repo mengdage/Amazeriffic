@@ -16,7 +16,6 @@ app.use(express.static(__dirname + "/client"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //connect to mongodb
-if()
 dbURI = process.env.MONGODB_URI || "mongodb://localhost/amazeriffic";
 mongoose.connect(dbURI);
 var db = mongoose.connection;
@@ -54,4 +53,4 @@ app.post("/addToDo", function(req, res){
   });
 });
 
-console.log("Server listening on port 3000");
+console.log("Server listening on port "+port);
