@@ -1,26 +1,54 @@
 var http = require("http"),
   express = require("express"),
   bodyParser = require("body-parser"),
+  mongoose = require("mongoose"),
   toDos = require("./toDos.json"),
   app = express();
+var ToDoSchema = mongoose.Schema({
+  description: String,
+  tags: [String]
+});
+var ToDo = mongoose.model("ToDo", ToDoSchema);
 
 app.use(express.static(__dirname + "/client"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+//connect to mongodb
+mongoose.connect("mongodb://localhost/amazeriffic");
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error"));
+db.once("open", console.log.bind(console, "connection succeeded"));
+
 http.createServer(app).listen(3000);
 
 app.get("/toDos.json", function(req, res){
-  res.json(toDos);
+  ToDo.find({}, function(err, toDos){
+    if(err) return console.error(err);
+    console.log(toDos);
+    res.json(toDos);
+  });
 
 });
+
 app.post("/addToDo", function(req, res){
   console.log(req.body);
-  var newTodo = req.body;
-  toDos.push(newTodo);
-  console.log(toDos);
+  var newToDo = new ToDo(req.body);
+  newToDo.save(function(err){
+    if(err){
+      res.send("ERROR");
+    } else{
+      console.log("New toDo inserted");
+      ToDo.find({}, function(err, toDos){
+        if(err) {
+          res.send("ERROR");
+        } else {
+          res.json(toDos);
+        }
+      });
 
-  res.send("Posted successfully");
+    }
+  });
 });
 
 console.log("Server listening on port 3000");
