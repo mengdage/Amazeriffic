@@ -3,7 +3,8 @@ var http = require("http"),
   bodyParser = require("body-parser"),
   mongoose = require("mongoose"),
   toDos = require("./toDos.json"),
-  app = express();
+  app = express(),
+  port = process.env.PORT || 3000;
 var ToDoSchema = mongoose.Schema({
   description: String,
   tags: [String]
@@ -15,12 +16,14 @@ app.use(express.static(__dirname + "/client"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //connect to mongodb
-mongoose.connect("mongodb://localhost/amazeriffic");
+if()
+dbURI = process.env.MONGODB_URI || "mongodb://localhost/amazeriffic";
+mongoose.connect(dbURI);
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", console.log.bind(console, "connection succeeded"));
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(port);
 
 app.get("/toDos.json", function(req, res){
   ToDo.find({}, function(err, toDos){

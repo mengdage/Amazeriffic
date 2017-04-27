@@ -3,6 +3,8 @@
   "description": "The best to-do list app in the history of the world!",
   "version": "0.0.2",
   "dependencies":{
-    "mongoose": "4.9.x"
+    "mongoose": "4.9.x",
+    "express": "4.15.x",
+    "body-parser": "1.17.x"
   }
 }
